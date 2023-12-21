@@ -1,1 +1,1 @@
-# eCommerce App made by React JS and Tailwind CSS
+# eCommerce App made with React JS and Tailwind CSS
