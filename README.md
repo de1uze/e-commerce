@@ -1,1 +1,1 @@
-# ecommerce-shop-starter
+# eCommerce App made with React JS and Tailwind CSS
