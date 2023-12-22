@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container-mx-auto ">
         <p className='text-white text-center'>
           Ecommerce WebApp made by
-          <span className='hover:underline'>
+          <span className='hover:text-emerald-400'>
             <a href="https://github.com/ImBiswarup" target='_blank'> Biswarup Ghosh</a>
           </span>
         </p>
@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="logo">
             <img className='h-5 w-5 rounded mr-2 bg-white' src={instagram} alt="" />
           </div>
-          <div className="link">
+          <div className="link hover:text-emerald-200">
             <a href="https://www.instagram.com/i_ambiswarup/" target='_blank'>i_ambiswarup</a>
           </div>
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="logo">
             <img className='h-5 w-5 rounded-full mr-2 bg-white' src={facebook} alt="" />
           </div>
-          <div className="link">
+          <div className="link hover:text-emerald-200">
             <a href="https://www.facebook.com/biswa.ghosh.927/" target='_blank'>Biswarup Ghosh</a>
           </div>
         </div>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="logo">
             <img className='h-5 w-5 rounded mr-2 bg-white' src={twitter} alt="" />
           </div>
-          <div className="link">
+          <div className="link hover:text-emerald-200">
             <a href="https://twitter.com/Im_Biswarup" target='_blank'>Im_Biswarup</a>
           </div>
         </div>

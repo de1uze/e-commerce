@@ -22,8 +22,6 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
 
-
-  // console.log(auth)
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 100 || Route === "/" ? setIsActive(true) : setIsActive(false);
@@ -62,12 +60,6 @@ const Header = () => {
                   placeholder={`Search for ${text}`}
                   className={`${productQuery ? "" : "bg-transparent"} px-2 py-1 w-full border-gray-500 rounded-lg focus:outline-none`}
                 />
-                {/* <button className="hover:bg-gray-600 hover:text-white bg-gray-200 px-3 py-1 ml-2 rounded-lg hidden sm:flex">
-                  Search
-                </button>
-                <button className="hover:bg-gray-600 hover:text-white bg-gray-200 px-3 py-1 ml-2 rounded-lg flex sm:hidden">
-                  ?
-                </button> */}
               </div>
             )}
           </div>

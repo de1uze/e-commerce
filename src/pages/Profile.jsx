@@ -12,13 +12,18 @@ const Profile = () => {
 
     const { loginWithRedirect, logout, user, isAuthenticated } = useContext(Login_Signup_Context);
 
+    const [edit, setEdit] = useState(false)
+
+    const editChanger = () => {
+        setEdit(!edit)
+    }
 
     return (
-        <div className='h-screen flex flex-col sm:flex-row'>
-            <div className='w-full md:w-[30%] bg-orange- overflow-x-hidden overflow-y-auto no-scrollbar'>
+        <div className='h-screen flex flex-col sm:flex-row sticky bg-gray-100 font-semibold'>
+            <div className='w-full sm:w-[30%] bg-orange- overflow-x-hidden overflow-y-auto no-scrollbar'>
                 <div className="details">
                     <div className="w-full rounded text-black flex flex-col items-center justify-center mt-20">
-                        <div className='flex items-center bg-gray-200 gap-6 w-full md:w-[90%] rounded'>
+                        <div className='flex items-center hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded cursor-pointer'>
                             {isAuthenticated ? (
                                 <>
                                     <div className="mr-3">
@@ -39,7 +44,7 @@ const Profile = () => {
                                 </>
                             )}
                         </div>
-                        <div className="order mt-5 flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-blue-600">
+                        <div className="order mt-5 flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <LuBaggageClaim />
                                 MY ORDERS
@@ -48,35 +53,35 @@ const Profile = () => {
                                 &gt;
                             </div>
                         </div>
-                        <div className="account flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
+                        <div className="account flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <FaUser />
                                 ACCOUNT SETTINGS
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 Profile Settings
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 Manage Information
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 PAN Information
                             </div>
                         </div>
 
-                        <div className="account flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
+                        <div className="account flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <FaWallet />
                                 PAYMENT SETTINGS
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 Gift Card
                             </div>
@@ -84,44 +89,44 @@ const Profile = () => {
                                 $0
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 Saved UPI
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 Saved Cards
                             </div>
                         </div>
 
-                        <div className="account flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
+                        <div className="account flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <MdAccountBalanceWallet />
                                 MY STUFF
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 My Coupon
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 My Review & Ratings
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 All Notification
                             </div>
                         </div>
-                        <div className="order flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
+                        <div className="order flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-20 gap-4'>
                                 My Wishlist
                             </div>
                         </div>
-                        <div className="order mt-5 flex items-center justify-between bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-blue-600 border_black mb-4" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                        <div className="order mt-5 flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-red-600 mb-4" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <FaPowerOff />
                                 Log Out
@@ -130,12 +135,268 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full md:w-[70%] bg-blue-500'>
-                {/* Right side content goes here */}
+            <div className='w-full md:w-[70%] overflow-y-auto overflow-x-hidden no-scrollbar'>
+                <div className="mt-16 ml-6">
+                    {
+                        isAuthenticated ? (
+                            <>
+                                <div className="info">
+                                    <div className="flex gap-4">
+                                        <h1>Personal Information</h1>
+                                        <button onClick={() => editChanger()} className='hover:text-blue-800'>
+                                            Edit
+                                        </button>
+                                    </div>
+
+                                    <div className="input flex gap-2 mt-2">
+                                        <input
+                                            className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                            placeholder={user.name.slice(0, 8)}
+                                            type="text"
+                                            name=""
+                                            id=""
+                                        />
+                                        <input
+                                            className={`${edit ? "" : "disable"} rounded w-80 h-8`}
+                                            placeholder={user.name.slice(8)}
+                                            type="text"
+                                            name=""
+                                            id=""
+                                        />
+                                    </div>
+                                    <div className="gender mt-4">
+                                        <h1>
+                                            Your Gender
+                                        </h1>
+                                        <div className="flex">
+                                            <div className="flex mr-3 gap-1.5">
+                                                <input className='' type="radio" name="male" id="" />
+                                                <h2>male</h2>
+                                            </div>
+                                            <div className="flex mr-3 gap-1.5">
+                                                <input type="radio" name="female" id="" />
+                                                <h2>female</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="email mt-4">
+                                        <div className="flex gap-4">
+                                            <h1>Email Address</h1>
+                                            <button onClick={() => editChanger()} className='hover:text-blue-500'>
+                                                Edit
+                                            </button>
+                                        </div>
+
+                                        <div className="input flex gap-2 mt-2">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                placeholder={user.email}
+                                                type="email"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="phone mt-4">
+                                        <div className="flex gap-4">
+                                            <h1>Mobile Number</h1>
+                                            <button onClick={() => editChanger()} className='hover:text-blue-500'>
+                                                Edit
+                                            </button>
+                                        </div>
+
+                                        <div className="input flex gap-2 mt-2">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                placeholder="+913322654875"
+                                                type="number"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div className="info">
+                                    <div className="flex gap-4">
+                                        <h1>Personal Information</h1>
+                                        <button onClick={() => editChanger()} className='hover:text-blue-800'>
+                                            Edit
+                                        </button>
+                                    </div>
+
+                                    <div className="input flex gap-2 mt-2">
+                                        <input
+                                            className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                            placeholder="Biswarup"
+                                            type="text"
+                                            name=""
+                                            id=""
+                                        />
+                                        <input
+                                            className={`${edit ? "" : "disable"} rounded w-80 h-8`}
+                                            placeholder="Ghosh"
+                                            type="text"
+                                            name=""
+                                            id=""
+                                        />
+                                    </div>
+                                    <div className="gender mt-4">
+                                        <h1>
+                                            Your Gender
+                                        </h1>
+                                        <div className="flex">
+                                            <div className="flex mr-3 gap-1.5">
+                                                <input className='' type="radio" name="male" id="" />
+                                                <h2>male</h2>
+                                            </div>
+                                            <div className="flex mr-3 gap-1.5">
+                                                <input type="radio" name="female" id="" />
+                                                <h2>female</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="email mt-4">
+                                        <div className="flex gap-4">
+                                            <h1>Email Address</h1>
+                                            <button onClick={() => editChanger()} className='hover:text-blue-500'>
+                                                Edit
+                                            </button>
+                                        </div>
+
+                                        <div className="input flex gap-2 mt-2">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                placeholder="biswarupg451@gmail.com"
+                                                type="email"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="phone mt-4">
+                                        <div className="flex gap-4">
+                                            <h1>Mobile Number</h1>
+                                            <button onClick={() => editChanger()} className='hover:text-blue-500'>
+                                                Edit
+                                            </button>
+                                        </div>
+
+                                        <div className="input flex gap-2 mt-2">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                placeholder={user.mobile}
+                                                type="tel"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    }
+                    <div className="FAQ mt-6">
+                        <div className="">
+                            <b>FAQ</b>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="text mb-4">
+                            <div className="qstn">
+                                <b>What happens when I update my email address (or mobile number)?</b>
+                            </div>
+                            <div className="ans">
+                                <h2>
+                                    Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="deactivate-account mb-8">
+                            <span className='cursor-pointer hover:text-blue-600' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} >
+                                <h2>
+                                    Deactivate account
+                                </h2>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
         </div>
-
-
     );
 };
 export default Profile
