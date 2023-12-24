@@ -7,7 +7,7 @@ const Home = () => {
 
   const { products, productQuery, filterProducts } = useContext(ProductContext);
 
-  
+  console.log(filterProducts)
 
   return (
     <div>
@@ -16,9 +16,17 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-7 max-w-sm mx-auto md:max-w-none md:mx-0">
             {
-              filterProducts.map((product) => (
-                <Product product={product} key={product.id} />
-              ))
+              filterProducts ? (
+                filterProducts.map((product) => (
+                  <Product product={product} key={product.id} />
+                ))
+              )
+                :
+                (
+                  <div className="w-full h-screen justify-center items-center flex">
+                    <div className="loader"></div>
+                  </div>
+                )
             }
           </div>
         </div>

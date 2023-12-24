@@ -14,10 +14,10 @@ const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return <div>
-    <div className="border border-[#e4e4e4] h-[300px] relative overflow-hidden group transition">
+    <div className="border border-[#e4e4e4] hover:shadow h-[300px] relative overflow-hidden group transition">
       <div className="w-full h-full flex items-center justify-center">
         <div className="w-[200px] mx-auto flex items-center justify-center">
-          <img className='max-h-[160px] group-hover:scale-150 transition duration-300' src={image} alt="" />
+          <img className='max-h-[160px] group-hover:scale-150 transition duration-500' src={image} alt="" />
         </div>
       </div>
       <div className="absolute top-4 right-8 group-hover:right-2 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">

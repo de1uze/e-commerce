@@ -39,7 +39,7 @@ const Header = () => {
     deleteSpeed: 40,
   });
   return (
-    <header className={`${isActive ? "bg-slate-100 py-4 shadow-md" : "bg-none py-4"} ${productQuery ? "bg-slate-400" : ""} fixed w-full z-10 transition-all`}>
+    <header className={`${isActive ? "bg-slate-100 py-4 shadow-md" : "bg-none py-4"} fixed w-full z-10 transition-all`}>
       <div className="flex items-center h-full w-full justify-around">
         <div className="w-[10%]">
           <Link to={"/"}>

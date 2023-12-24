@@ -6,6 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { FaWallet } from "react-icons/fa";
 import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaPowerOff } from "react-icons/fa";
+import { Link } from "react-router-dom"
 
 
 const Profile = () => {
@@ -19,9 +20,9 @@ const Profile = () => {
     }
 
     return (
-        <div className='h-screen flex flex-col sm:flex-row sticky bg-gray-100 font-semibold'>
-            <div className='w-full sm:w-[30%] bg-orange- overflow-x-hidden overflow-y-auto no-scrollbar'>
-                <div className="details">
+        <div className='h-screen flex sticky font-semibold'>
+            <div className='w-full sm:w-[30%] overflow-x-hidden overflow-y-auto no-scrollbar sm:flex sm:justify-center hidden'>
+                <div className="details w-full h-screen">
                     <div className="w-full rounded text-black flex flex-col items-center justify-center mt-20">
                         <div className='flex items-center hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded cursor-pointer'>
                             {isAuthenticated ? (
@@ -44,7 +45,7 @@ const Profile = () => {
                                 </>
                             )}
                         </div>
-                        <div className="order mt-5 flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-blue-600">
+                        <Link to={"/orders"} className="order mt-5 flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded hover:cursor-pointer hover:text-blue-600">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <LuBaggageClaim />
                                 MY ORDERS
@@ -52,7 +53,7 @@ const Profile = () => {
                             <div className='mr-4'>
                                 &gt;
                             </div>
-                        </div>
+                        </Link>
                         <div className="account flex items-center justify-between hover:bg-gray-200 gap-6 w-full md:w-[90%]  hover:cursor-pointer hover:text-blue-600 mt-5">
                             <div className='h-10 flex items-center ml-7 gap-4'>
                                 <FaUser />
@@ -135,8 +136,8 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full md:w-[70%] overflow-y-auto overflow-x-hidden no-scrollbar'>
-                <div className="mt-16 ml-6">
+            <div className='w-full lg:w-[70%] overflow-y-auto overflow-x-hidden no-scrollbar'>
+                <div className="mt-20 ml-6">
                     {
                         isAuthenticated ? (
                             <>
@@ -147,22 +148,25 @@ const Profile = () => {
                                             Edit
                                         </button>
                                     </div>
-
-                                    <div className="input flex gap-2 mt-2">
-                                        <input
-                                            className={`${edit ? "" : "block"} rounded w-80 h-8`}
-                                            placeholder={user.name.slice(0, 8)}
-                                            type="text"
-                                            name=""
-                                            id=""
-                                        />
-                                        <input
-                                            className={`${edit ? "" : "disable"} rounded w-80 h-8`}
-                                            placeholder={user.name.slice(8)}
-                                            type="text"
-                                            name=""
-                                            id=""
-                                        />
+                                    <div className="input sm:flex block gap-2 mt-2 ">
+                                        <div className="">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5`}
+                                                placeholder={user.name.slice(0, 8)}
+                                                type="text"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+                                        <div className="">
+                                            <input
+                                                className={`${edit ? "" : "disable"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
+                                                placeholder={user.name.slice(8)}
+                                                type="text"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
                                     </div>
                                     <div className="gender mt-4">
                                         <h1>
@@ -189,7 +193,7 @@ const Profile = () => {
 
                                         <div className="input flex gap-2 mt-2">
                                             <input
-                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder={user.email}
                                                 type="email"
                                                 name=""
@@ -207,7 +211,7 @@ const Profile = () => {
 
                                         <div className="input flex gap-2 mt-2">
                                             <input
-                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder="+913322654875"
                                                 type="number"
                                                 name=""
@@ -228,21 +232,25 @@ const Profile = () => {
                                         </button>
                                     </div>
 
-                                    <div className="input flex gap-2 mt-2">
-                                        <input
-                                            className={`${edit ? "" : "block"} rounded w-80 h-8`}
-                                            placeholder="Biswarup"
-                                            type="text"
-                                            name=""
-                                            id=""
-                                        />
-                                        <input
-                                            className={`${edit ? "" : "disable"} rounded w-80 h-8`}
-                                            placeholder="Ghosh"
-                                            type="text"
-                                            name=""
-                                            id=""
-                                        />
+                                    <div className="input sm:flex block gap-2 mt-2">
+                                        <div className="">
+                                            <input
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
+                                                placeholder="Biswarup"
+                                                type="text"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
+                                        <div className="">
+                                            <input
+                                                className={`${edit ? "" : "disable"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
+                                                placeholder="Ghosh"
+                                                type="text"
+                                                name=""
+                                                id=""
+                                            />
+                                        </div>
                                     </div>
                                     <div className="gender mt-4">
                                         <h1>
@@ -269,7 +277,7 @@ const Profile = () => {
 
                                         <div className="input flex gap-2 mt-2">
                                             <input
-                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1`}
                                                 placeholder="biswarupg451@gmail.com"
                                                 type="email"
                                                 name=""
@@ -287,8 +295,8 @@ const Profile = () => {
 
                                         <div className="input flex gap-2 mt-2">
                                             <input
-                                                className={`${edit ? "" : "block"} rounded w-80 h-8`}
-                                                placeholder={user.mobile}
+                                                className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
+                                                placeholder="+913325412154"
                                                 type="tel"
                                                 name=""
                                                 id=""
@@ -386,7 +394,7 @@ const Profile = () => {
                         </div>
                         <div className="deactivate-account mb-8">
                             <span className='cursor-pointer hover:text-blue-600' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} >
-                                <h2>
+                                <h2 className='hover:text-blue-600 inline-block border p-2 hover:bg-gray-200 rounded'>
                                     Deactivate account
                                 </h2>
                             </span>
@@ -395,7 +403,6 @@ const Profile = () => {
 
                 </div>
             </div>
-
         </div>
     );
 };
