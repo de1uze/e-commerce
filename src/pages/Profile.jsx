@@ -11,17 +11,18 @@ import { Link } from "react-router-dom"
 
 const Profile = () => {
 
-    const { loginWithRedirect, logout, user, isAuthenticated } = useContext(Login_Signup_Context);
+    const { logout, user, isAuthenticated } = useContext(Login_Signup_Context);
 
-    const [edit, setEdit] = useState(false)
+    const [edit, setEdit] = useState()
+    const [isDisabled, setIsDisabled] = useState(true);
 
     const editChanger = () => {
-        setEdit(!edit)
+        setIsDisabled(!isDisabled)
     }
 
     return (
         <div className='h-screen flex sticky font-semibold'>
-            <div className='w-full sm:w-[30%] overflow-x-hidden overflow-y-auto no-scrollbar sm:flex sm:justify-center hidden'>
+            <div className='sm:w-[30%] overflow-x-hidden overflow-y-auto no-scrollbar sm:flex sm:justify-center hidden'>
                 <div className="details w-full h-screen">
                     <div className="w-full rounded text-black flex flex-col items-center justify-center mt-20">
                         <div className='flex items-center hover:bg-gray-200 gap-6 w-full md:w-[90%] rounded cursor-pointer'>
@@ -136,7 +137,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full lg:w-[70%] overflow-y-auto overflow-x-hidden no-scrollbar'>
+            <div className='sm:w-[70%] overflow-x-hidden overflow-y-auto no-scrollbar '>
                 <div className="mt-20 ml-6">
                     {
                         isAuthenticated ? (
@@ -154,8 +155,7 @@ const Profile = () => {
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5`}
                                                 placeholder={user.name.slice(0, 8)}
                                                 type="text"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
                                             />
                                         </div>
                                         <div className="">
@@ -163,8 +163,7 @@ const Profile = () => {
                                                 className={`${edit ? "" : "disable"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder={user.name.slice(8)}
                                                 type="text"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
                                             />
                                         </div>
                                     </div>
@@ -196,8 +195,8 @@ const Profile = () => {
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder={user.email}
                                                 type="email"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
+
                                             />
                                         </div>
                                     </div>
@@ -214,8 +213,7 @@ const Profile = () => {
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder="+913322654875"
                                                 type="number"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
                                             />
                                         </div>
 
@@ -227,7 +225,7 @@ const Profile = () => {
                                 <div className="info">
                                     <div className="flex gap-4">
                                         <h1>Personal Information</h1>
-                                        <button onClick={() => editChanger()} className='hover:text-blue-800'>
+                                        <button onClick={() => editChanger()} className='hover:text-blue-500'>
                                             Edit
                                         </button>
                                     </div>
@@ -238,8 +236,8 @@ const Profile = () => {
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder="Biswarup"
                                                 type="text"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
+
                                             />
                                         </div>
                                         <div className="">
@@ -247,8 +245,8 @@ const Profile = () => {
                                                 className={`${edit ? "" : "disable"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
                                                 placeholder="Ghosh"
                                                 type="text"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
+
                                             />
                                         </div>
                                     </div>
@@ -280,8 +278,8 @@ const Profile = () => {
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1`}
                                                 placeholder="biswarupg451@gmail.com"
                                                 type="email"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
+
                                             />
                                         </div>
                                     </div>
@@ -296,10 +294,10 @@ const Profile = () => {
                                         <div className="input flex gap-2 mt-2">
                                             <input
                                                 className={`${edit ? "" : "block"} rounded w-80 h-8 placeholder:pl-1.5 pl-1.5 `}
-                                                placeholder="+913325412154"
+                                                placeholder="+91-1234567890"
                                                 type="tel"
-                                                name=""
-                                                id=""
+                                                disabled={`${isDisabled ? "true" : ""}`}
+
                                             />
                                         </div>
 
@@ -308,6 +306,9 @@ const Profile = () => {
                             </>
                         )
                     }
+                    <div className="update-btn mt-4 sm:flex sm:items-center">
+                        <button className='bg-white text-orange-400 hover:bg-orange-400 hover:text-white rounded p-1.5'>Update Changes</button>
+                    </div>
                     <div className="FAQ mt-6">
                         <div className="">
                             <b>FAQ</b>
@@ -394,7 +395,7 @@ const Profile = () => {
                         </div>
                         <div className="deactivate-account mb-8">
                             <span className='cursor-pointer hover:text-blue-600' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} >
-                                <h2 className='hover:text-blue-600 inline-block border p-2 hover:bg-gray-200 rounded'>
+                                <h2 className='hover:text-blue-600 inline-block p-2 hover:bg-gray-200 rounded'>
                                     Deactivate account
                                 </h2>
                             </span>

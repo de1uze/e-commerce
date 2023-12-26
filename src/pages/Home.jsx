@@ -5,9 +5,7 @@ import Hero from "../components/Hero"
 
 const Home = () => {
 
-  const { products, productQuery, filterProducts } = useContext(ProductContext);
-
-  console.log(filterProducts)
+  const { filterProducts } = useContext(ProductContext);
 
   return (
     <div>
