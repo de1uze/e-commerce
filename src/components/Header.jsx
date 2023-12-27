@@ -25,13 +25,15 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 100 || Route === "/" ? setIsActive(true) : setIsActive(false);
+      window.scrollY > 170  ? setIsActive(true) : setIsActive(false);
     });
     return () => {
       window.removeEventListener("scroll", () => {
       });
     };
-  }, []);
+  }, [Route]);
+
+
 
   const [text] = useTypewriter({
     words: ["Men's", "Women's", "Electronics", "Jewellery"],
@@ -55,12 +57,11 @@ const Header = () => {
             {showSearch && (
               <div className="flex items-center w-full">
                 <input
-                  autoFocus
                   value={productQuery}
                   onChange={handleChange}
                   type="text"
                   placeholder={`Search for ${text}`}
-                  className={`${productQuery ? "" : "bg-transparent"} px-2 py-1 w-full border-gray-500 rounded focus:outline-none`}
+                  className={`${productQuery ? "bg-orange-100" : "bg-transparent"} px-2 py-1 w-full border-gray-500 rounded focus:outline-none`}
                 />
               </div>
             )}
@@ -88,7 +89,7 @@ const Header = () => {
             }
           </div>
         </div>
-        <div className={`cart_icon ${isActive ? "" : "hidden"} ${isAuthenticated ? "w-[5%]" : "w-[10%]"} flex items-center justify-center`}>
+        <div className={`cart_icon ${isAuthenticated ? "w-[5%]" : "w-[10%]"} ${isActive ? "" : "hidden"} flex items-center justify-center`}>
           <div className={`cursor-pointer flex relative ${isActive ? "" : "hidden"}`}>
             <BsBag onClick={() => setIsOpen(!isOpen)} className="text-2xl cursor-pointer" />
             <div className={`absolute -right-1 -top-2 bg-orange-500 text-[12px] w-4 h-4 flex items-center justify-center rounded-full`}>{itemAmount}</div>
