@@ -7,7 +7,7 @@ import ProductDetails from "./pages/ProductDetails";
 
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 import Profile from './pages/Profile';
 
 
@@ -22,7 +22,7 @@ const App = () => {
         <Route path='/profile' element={<Profile />} />
       </Routes>
       <Sidebar />
-      <Footer />
+   
     </Router>
 
 
